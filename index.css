@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+
+    /* background-color:rgb(69, 70, 72); */
+    background-color:rgb(252, 252, 252);
+    /* background-color:rgb(21, 23, 23); */
+}
+.main_div{
+    border:1px solid black;
+    margin: 0px auto;
+    padding: 10px 20px;
+    height: 100vh;
+    width: 100%;
+}
+.search_by_type{
+    margin:0.2rem;
+    padding: 10px 20px;
+}
+.search_by_type input{
+    font-size: 18px;
+    font-weight:500;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left:-1.2rem;
+    text-align:left;
+    height:1%;
+    width: 94%;
+    border-radius: 15px;
+    /* border:none; */
+    padding: 10px 2px;
+    text-transform: capitalize;
+}
+tr :nth-of-type(n){
+   
+    font-size: 22px;
+    /* padding: 8px 80px; */
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    /* background:rgb(242, 242, 242); */
+}
+#data tr :nth-of-type(3){
+    
+    height:5px;
+    width: 15.2rem;
+    /* background-color:rgb(233, 233, 233); */
+    /* margin-top: 10px; */
+    border-radius: 5px;
+}
+#data tr td{
+    padding: 1px 80px;
+}
+#data tr span{
+    padding: 1px 10px;
+}
+#data tr td input{
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+
+/* ----------pagination------------------- */
+.main_pagination{
+    margin-top:1%;
+    display: grid;
+    grid-template-columns: 0.3fr 3fr;
+    /* grid-template-rows: 3fr; */
+}
+.pagination_same{
+    /* width: 50%; */
+    height:80px;
+    border:1px solid rgb(250, 250, 250);
+}
+/* #pagination_1{
+    height: 100%;
+    width: 30%;
+    
+    border: 1px solid black;
+} */
+#pagination_1 button{
+    margin:5%;
+    height: 40%;
+    width: 90%;
+    border-radius: 45px;
+    color: white;
+    background-color:red;
+    
+}
+#pagination_2{
+    
+    height: 100%;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* border: 1px solid black; */
+}
+#pagination_2 button{
+    margin-top:1%;
+    margin-left:0.5%;
+    height: 50%;
+    width: 11.1%;
+    padding:1px 1px;
+    border-radius: 60%;
+    font-size: 15px;
+    background-color:#1890ff;
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(253, 253, 253);
+    font-family: cursive;
+    box-shadow: 0 0.2rem 0.1rem 0.1rem rgb(5, 57, 230);
+}
+#pagination_2 button:hover{
+    transition: 0.5s;
+    background-color:rgb(10, 218, 245);
+    cursor: pointer;
+    border: 1px solid rgb(10, 246, 49);
+    box-shadow: 0 0.2rem 0.1rem 0.1rem rgb(103, 255, 247);
+    
+}
+hr{
+    height:1px;
+    width: 100%;
+    border: 1px solid white;
+}
+.line{
+    height:1px;
+    width:788%;
+    background-color:rgb(134, 134, 134);
+    /* border: 0.05px solid rgb(1, 1, 1); */
+}
