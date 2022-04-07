@@ -16,8 +16,11 @@
 
         <div class="search_by_type">
             <input type="text" name="" placeholder="Search by name email and role"
-             id="Search" onkeypress="SearchingItem()">
-          
+             id="Search" 
+             onkeyup="SearchingItem()"
+             >
+             
+             <!-- onkeypress="SearchingItem()" -->
         </div>
         <hr>
         <table id="Table_show">
@@ -52,9 +55,9 @@
 
         <button onclick="handelChange(-4)"><i class="uil uil-angle-double-left"></i></button>
         <button><i class="uil uil-angle-left"></i></button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
+        <button onclick="pagination(Data,0,10)">1</button>
+        <button onclick="pagination(Data,10,20)">2</button>
+        <button onclick="pagination(Data,20,30)">3</button>
         <button><i class="uil uil-angle-right"></i></button>
         <button><i class="uil uil-angle-double-right"></i></button>
         </div>

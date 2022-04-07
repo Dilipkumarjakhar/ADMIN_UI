@@ -6,40 +6,54 @@
     let thead=document.getElementById("thead");
     let main_pagination=document.querySelector(".main_pagination");
     let Data;
-
+    
     async function fetchdata(){
-        
         let res=await fetch(url);
-        let result=await res.json();
-        getdata(result); 
-        return Data=result;
-       
-        }
-    
-    
-    
-    const id=setInterval(()=>{
+        Data=await res.json();
+        
+        pagination(Data,0,10)
+     
+        
       
-        fetchdata()
-    },0.1)
-    
-    setTimeout(()=>{
-        clearInterval(id)
-    },1)
+        
+    }
+    fetchdata()
+  
     
     
+    function pagination(Data,s,e){
+        let S=[];
+        
+        
+        let total=Data.length;
+        let perPage=Math.ceil(total/10);
+        console.log('total:', total)
+        console.log('perPage:', perPage)
+    for(var i=s;i<e;i++){
+            
+            S.push(Data[i]);
+               
+        }
+     
+        getdata(S)
+        Data=S;
+        console.log('Data:', Data)
+        
+    } 
+    
+   
     
     
     
 // <------Starting to showing  the data of items------>
 function getdata(item){
     appended.innerHTML="";
-    if(item.length==0){
-            main_pagination.style.display="none";
-            thead.innerHTML='';
-            appended.innerHTML="Data is Processing....";
-        }
-        item.map((item)=>{
+    // if(item.length==0){
+    //         main_pagination.style.display="none";
+    //         thead.innerHTML='';
+    //         appended.innerHTML="Data is Processing....";
+    //     }
+        item.map((item,i)=>{
             let div=document.createElement('div');
             div.setAttribute("class","line");
             
@@ -78,7 +92,7 @@ function getdata(item){
             
             
             span1.addEventListener('click',()=>{
-                Delete(item.id)});
+                Delete(i)});
                 
                 
                 td_5.append(span,span1)
@@ -134,8 +148,13 @@ function getdata(item){
 let a=[];
 function SearchingItem(){
     let search=document.getElementById('Search').value;
-    Data.map((val)=>{
-        if(search===val.name || search==val.email || search==val.role){
+    Data.map((val,i)=>{
+        if(search===val.name[0] 
+            ||  search==val.email[0] 
+            || search==val.role[0]
+            ||search===val.name
+            ||  search==val.email
+            || search==val.role){
             
             a.push(val)
         }
@@ -146,13 +165,24 @@ function SearchingItem(){
     a=[];
 }
 
+
+  
+//   const SearchingItem = debounce(() => saveInput());
+
+
+
+
+
 //<---Ending of search item----->
 
 
 //   <-----starting of delete item------->
     const Delete=(index)=>{
-        delete Data[index-1];
-        getdata(Data);
+
+        console.log('Data:', Data)
+        delete S[index-1];
+        console.log('S:',S)
+        getdata(S);
         
     }
 //   <-----Ending of delete item------->
@@ -163,19 +193,10 @@ function SearchingItem(){
     
 // <------Starting of The Pagination ------>
 
-// let total=Data.length;
-// let perPage=Math.ceil(total/10);
-// console.log('total:', total)
-// console.log('perPage:', perPage)
 
 
 
-const handelChange=(v)=>{
-    console.log(start,end)
-    start=10*(v-1);
-    end=10*v;
-    getdata(Data,start,end);
-}
+
 // <------Ending of The Pagination ------>
 
 
